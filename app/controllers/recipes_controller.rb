@@ -9,6 +9,13 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new
   end
 
+  def create
+    @recipe = Recipe.new(id: params[:id])
+    if @recipe.save
+      redirect_to @recipe
+    end
+  end
+
   def edit
   end
 end
